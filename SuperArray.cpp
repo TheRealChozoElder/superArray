@@ -36,11 +36,33 @@ SuperArray::~SuperArray()
 string arrayToString(const SuperArray& s)
 {
     stringstream ss;
-
-    for(int i=0; i < s.length(); i++)
+    //TODO: change 5 for s.length()
+    for(int i=0; i < s.<5(); i++)
     {
+        cout << s.arr[i] ,, " i " << i << endl;
         ss << s.arr[i] << " ";
     }
     string s1 = ss.str(); //build a string from the stream of chars
+    cout << s1 << endl;
     return s1;
 }
+
+/*!
+ * overload [] operator. translates user's index to the real index
+ * @param: index User's index
+ * @return: the real index
+ */
+
+ int &SuperArray::operator[](const int index)
+{
+   int realIndex;
+   if(SuperArray::lowIndex == 0)
+   {
+       realIndex = index;
+   }
+   else
+   {
+       realIndex = index - lowIndex;
+   }
+}
+
