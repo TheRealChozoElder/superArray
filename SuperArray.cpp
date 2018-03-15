@@ -19,6 +19,8 @@ SuperArray::SuperArray(const int begIndex, const unsigned int capacity)
 	arr = new int[capacity];
     SuperArray::capacity = capacity;
 	// Other info below
+    lowIndex = begIndex;
+    highIndex = begIndex + capacity - 1; 
 }
 
 /*!
@@ -37,13 +39,24 @@ string arrayToString(const SuperArray& s)
 {
     stringstream ss;
     //TODO: change 5 for s.length()
-    for(int i=0; i < s.<5(); i++)
+    for(int i=0; i < 5; i++)
     {
-        cout << s.arr[i] ,, " i " << i << endl;
+       // cout << s.arr[i] <<  " i " << i << endl;
         ss << s.arr[i] << " ";
     }
     string s1 = ss.str(); //build a string from the stream of chars
-    cout << s1 << endl;
+   // cout << s1 << endl;
+   
+    size_t found;
+    found = s1.find_last_not_of(" ");
+    if (found != string::npos)
+    {
+        str.erase(found + 1);
+    }
+    else
+    {
+        s1.clear; //whitespace
+    }
     return s1;
 }
 
@@ -64,5 +77,6 @@ string arrayToString(const SuperArray& s)
    {
        realIndex = index - lowIndex;
    }
+   return arr[realIndex];
 }
 
