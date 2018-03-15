@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN // this tells catch to provide a main()
 // Only do this in one cpp file
-#include "catch.hpp: // load test driven Lib
+#include "catch.hpp" // load test driven Lib
 #include "SuperArray.h"
 
 TEST_CASE("1) Test Constructor")
@@ -16,6 +16,6 @@ TEST_CASE("1) Test Constructor")
     }
     SECTION("Test #1: Constructor")
     {
-        REQUIRE(arrayToString(sa) == "20 21 21 23 24");
+        REQUIRE(arrayToString(sa) == "20 21 22 23 24");
     }
 }
