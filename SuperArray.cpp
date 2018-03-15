@@ -51,11 +51,11 @@ string arrayToString(const SuperArray& s)
     found = s1.find_last_not_of(" ");
     if (found != string::npos)
     {
-        str.erase(found + 1);
+        s1.erase(found + 1);
     }
     else
     {
-        s1.clear; //whitespace
+        s1.clear(); //whitespace
     }
     return s1;
 }
